@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
 body{
     margin: 0;
     padding: 0;
-    font-family: monospace;
+    font-family: 'Space Mono', monospace;
     height: 100vh;
     overflow: hidden;
     background-color: black;
@@ -27,6 +29,50 @@ body{
     box-sizing: border-box;
 }
 
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: black;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color: #0b0c0e;
+}
+
+
 #videoFondo {
     position: fixed;
     top: 0;
@@ -36,4 +82,5 @@ body{
     object-fit: cover;
     z-index: -1; 
 }
+
   
